@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No-Touch Hand Cursor Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hand Gesture Cursor Control</h1>
+        
+        <!-- Main Black Canvas -->
+        <div class="main-canvas-container">
+            <canvas id="mainCanvas"></canvas>
+            <div id="cursor" class="cursor"></div>
+        </div>
+        
+        <!-- Tiny Webcam Feed -->
+        <div class="webcam-container">
+            <video id="webcam" autoplay playsinline></video>
+            <canvas id="webcamOutput"></canvas>
+        </div>
+        
+        <!-- Controls -->
+        <div class="controls">
+            <button id="startBtn">Start Gesture Control</button>
+            <button id="resetBtn">Reset Cursor</button>
+            <div class="status-container">
+                <div id="status">Status: Ready</div>
+                <div id="gestureStatus">Gesture: None</div>
+                <div id="cursorPos">Cursor: (0, 0)</div>
+            </div>
+        </div>
+        
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>How to Use:</h3>
+            <ul>
+                <li>👆 <strong>Index finger up</strong> - Move cursor</li>
+                <li>✊ <strong>Fist (all fingers down)</strong> - Click action</li>
+                <li>🤟 <strong>Victory sign (index + middle up)</strong> - Right click</li>
+                <li>🖐️ <strong>Open hand</strong> - Drag mode</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MediaPipe SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
